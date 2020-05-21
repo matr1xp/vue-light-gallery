@@ -231,7 +231,7 @@
       return addStyle(id, style);
     };
   }
-  var HEAD = document.head || document.getElementsByTagName('head')[0];
+  var HEAD = typeof window !== 'undefined' && (document.head || document.getElementsByTagName('head')[0]);
   var styles = {};
   function addStyle(id, css) {
     var group = isOldIE ? css.media || 'default' : id;
